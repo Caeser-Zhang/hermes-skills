@@ -1,0 +1,25 @@
+"""
+conftest.py模板
+用于pytest配置和共享fixtures
+"""
+import pytest
+from unittest.mock import Mock, patch, MagicMock
+
+
+# Configure pytest
+def pytest_configure(config):
+    """Configure pytest"""
+    pass
+
+
+{% for fixture in fixtures %}
+@pytest.fixture
+def {{ fixture.name }}():
+    """
+    {{ fixture.description }}
+    """
+    {{ fixture.code | indent(4) }}
+    return {{ fixture.return_value }}
+
+
+{% endfor %}

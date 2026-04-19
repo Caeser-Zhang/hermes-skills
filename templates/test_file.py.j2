@@ -1,0 +1,36 @@
+"""
+pytest测试文件模板 (Jinja2)
+使用方法: 在代码生成器中使用此模板
+"""
+import pytest
+from unittest.mock import Mock, patch, MagicMock
+
+{% for import in imports %}
+{{ import }}
+{% endfor %}
+
+
+class {{ class_name }}:
+    """{{ description }}"""
+    
+    {% if setup_method %}
+    def setup_method(self):
+        """Setup for each test"""
+        {{ setup_method | indent(8) }}
+    
+    {% endif %}
+    {% if setup_class %}
+    @classmethod
+    def setup_class(cls):
+        """Setup for all tests in this class"""
+        {{ setup_class | indent(8) }}
+    
+    {% endif %}
+    {% for test_case in test_cases %}
+    def {{ test_case.name }}(self):
+        """{{ test_case.description }}"""
+        {% for assertion in test_case.assertions %}
+        {{ assertion }}
+        {% endfor %}
+    
+    {% endfor %}
