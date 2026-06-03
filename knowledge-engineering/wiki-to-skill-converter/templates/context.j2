@@ -1,0 +1,73 @@
+---
+name: {{skill_name}}
+description: {{description}}
+version: 1.0.0
+author: Hermes Agent (auto-generated from Wiki)
+metadata:
+  hermes:
+    tags:
+{{tags_yaml}}
+    triggers:
+      keywords:
+{{keywords_yaml}}
+      context_patterns:
+        - "{{context_pattern}}"
+      urgency: "low"
+
+lifecycle:
+  owner_team: "TBD"
+  review_cadence: "{{review_cadence}}"
+  last_reviewed_on: "{{date}}"
+---
+
+# {{title}}
+
+> 🧠 **Quality:** {{quality_label}}级 | **Type:** context | **Generated:** {{date}}
+
+<!--
+@load_strategy: progressive
+@l1_tokens: ~400
+-->
+
+## L1: 决策背景
+
+### 问题
+
+{{problem}}
+
+### 决策
+
+{{decision}}
+
+### 约束条件
+
+- {{constraint_1}}
+- {{constraint_2}}
+
+### 后果
+
+✅ 正面:
+- {{pro_1}}
+
+⚠️ 负面:
+- {{con_1}}
+
+---
+
+## L2: 演化追踪
+
+| 日期 | 变更 | 原因 |
+|------|------|------|
+| {{date}} | 初始决策 | - |
+
+---
+
+## ⚠️ 注意事项
+
+{{pitfalls}}
+
+---
+
+## ✅ 使用约定
+
+引用本 Skill 时，应在相关代码/文档中标注 @see {{skill_name}}。
