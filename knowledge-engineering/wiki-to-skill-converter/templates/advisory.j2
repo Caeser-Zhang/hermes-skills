@@ -1,0 +1,76 @@
+---
+name: {{skill_name}}
+description: {{description}}
+version: 1.0.0
+author: Hermes Agent (auto-generated from Wiki)
+metadata:
+  hermes:
+    tags:
+{{tags_yaml}}
+    triggers:
+      keywords:
+{{keywords_yaml}}
+      context_patterns:
+        - "{{context_pattern}}"
+      urgency: "low"
+
+lifecycle:
+  owner_team: "TBD"
+  review_cadence: "{{review_cadence}}"
+  last_reviewed_on: "{{date}}"
+---
+
+# {{title}}
+
+> 📘 **Quality:** {{quality_label}}级 | **Type:** advisory | **Generated:** {{date}}
+
+<!--
+@load_strategy: progressive
+@l1_tokens: ~400
+@l2_tokens: ~1000/principle
+-->
+
+## L1: 核心原则
+
+{{principles}}
+
+<!-- @load_next: 按需加载原则详情 -->
+
+## L2: {{principle_name}}
+
+### ✅ 正确做法
+
+```{{code_lang}}
+{{good_example}}
+```
+
+> ✅ **为什么这样做:** {{why_good}}
+
+### ❌ 常见反模式
+
+```{{code_lang}}
+{{bad_example}}
+```
+
+> ❌ **问题:** {{why_bad}}
+
+### 边界与例外
+
+以下情况可以不遵守本原则：
+- {{exception_1}}
+- {{exception_2}}
+
+---
+
+## ⚠️ 常见误区
+
+{{pitfalls}}
+
+---
+
+## ✅ 检查清单
+
+**代码审查时检查：**
+- [ ] <检查项1>
+- [ ] <检查项2>
+- [ ] <检查项3>
