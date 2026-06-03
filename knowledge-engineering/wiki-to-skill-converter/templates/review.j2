@@ -1,0 +1,66 @@
+---
+name: {{skill_name}}
+description: {{description}}
+version: 1.0.0
+author: Hermes Agent (auto-generated from Wiki)
+metadata:
+  hermes:
+    tags:
+{{tags_yaml}}
+    triggers:
+      keywords:
+{{keywords_yaml}}
+      context_patterns:
+        - "{{context_pattern}}"
+      urgency: "medium"
+
+lifecycle:
+  owner_team: "TBD"
+  review_cadence: "{{review_cadence}}"
+  last_reviewed_on: "{{date}}"
+---
+
+# {{title}}
+
+> 🔍 **Quality:** {{quality_label}}级 | **Type:** review | **Generated:** {{date}}
+
+<!--
+@load_strategy: progressive
+@l1_tokens: ~500
+-->
+
+## L1: 审查清单
+
+| 检查项 | 风险等级 | 可自动检测 | 修复指引 |
+|--------|---------|-----------|----------|
+| <检查项1> | 🔴 严重 | 是 / 否 | → @ref: <修复指引1> |
+| <检查项2> | 🟡 中等 | 是 / 否 | → @ref: <修复指引2> |
+| <检查项3> | 🟢 轻微 | 是 / 否 | → @ref: <修复指引3> |
+
+### 风险矩阵
+
+| 影响 \ 概率 | 低 | 中 | 高 |
+|------------|----|----|-----|
+| **严重** | ⚠️ | 🔴 | 🔴🔴 |
+| **中等** | ✅ | ⚠️ | 🔴 |
+| **轻微** | ✅ | ✅ | ⚠️ |
+
+### 合规映射
+
+| 检查项 | 对应标准 | 备注 |
+|--------|---------|------|
+| <检查项1> | <标准条款> | <备注> |
+
+---
+
+## ⚠️ 常见疏漏
+
+{{pitfalls}}
+
+---
+
+## ✅ 审查通过标准
+
+- [ ] 所有 🔴 严重项已修复
+- [ ] 🟡 中等级项有修复计划
+- [ ] 审查记录已归档
