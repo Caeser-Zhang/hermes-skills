@@ -1,0 +1,120 @@
+---
+name: {{skill_name}}
+description: {{description}}
+version: 1.0.0
+author: Hermes Agent (auto-generated from Wiki)
+metadata:
+  hermes:
+    tags:
+{{tags_yaml}}
+    triggers:
+      keywords:
+{{keywords_yaml}}
+      negative_triggers:
+        - "{{skill_name}} 已解决"
+        - "如何监控 {{skill_name}}"
+      urgency: "medium"
+
+lifecycle:
+  owner_team: "TBD"
+  owner_contact: "TBD"
+  review_cadence: "{{review_cadence}}"
+  last_reviewed_on: "{{date}}"
+
+conflict_resolution:
+  priority: 50
+  defers_to: []
+
+---
+
+# {{title}}
+
+> **Quality:** {{quality_label}}级 | **Type:** operational | **Generated:** {{date}}
+
+<!--
+@load_strategy: progressive
+@l1_tokens: ~500（诊断入口层）
+@l2_tokens: ~1500/branch（详细步骤层）
+-->
+
+## L1: 诊断入口
+
+### 症状识别
+
+{{symptoms}}
+
+### 快速分类
+
+| 条件 | 现象 | 可能原因 | 进入分支 |
+|------|------|---------|---------|
+| **<条件1>** | <现象1> | <原因1> | → @branch: <branch1> |
+| **<条件2>** | <现象2> | <原因2> | → @branch: <branch2> |
+| **其他** | 不明确 | 需深入排查 | → @branch: generic |
+
+### 第一步（所有分支共用）
+
+```bash
+# 🔍 诊断：获取关键状态信息
+<first_command>
+```
+
+> **输出关注点**: <告诉 Agent 在输出中重点看什么>
+
+<!-- @load_next: 根据分支条件按需加载对应 L2 章节 -->
+
+---
+
+## L2: Branch - <分支名称>
+
+<!-- @load_condition: <具体条件，如 exit_code == 137> -->
+<!-- @token_budget: ~1200 -->
+
+### 诊断步骤
+
+**Step 1: <标题>**
+
+```bash
+# <用途说明>
+<command_template>
+```
+
+**Step 2: <标题>**
+
+```bash
+# <用途说明>
+<command_template>
+```
+
+### 解决方案
+
+#### 🩹 临时止血
+
+```bash
+# <操作风险说明>
+<temp_fix_command>
+```
+
+#### 🔧 根本修复
+
+<root_cause_fix_description>
+
+---
+
+## ⚠️ 常见陷阱
+
+{{pitfalls}}
+
+---
+
+## ✅ 验证清单
+
+**快速验证（30秒内）:**
+- [ ] <核心指标恢复正常>
+- [ ] <异常日志停止>
+
+**深度验证（24小时）:**
+- [ ] <问题未复发>
+- [ ] <监控告警未触发>
+
+**假象识别:**
+- [ ] <看起来修好了但其实没有的现象>
