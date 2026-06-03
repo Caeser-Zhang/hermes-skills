@@ -1,0 +1,72 @@
+---
+name: {{skill_name}}
+description: {{description}}
+version: 1.0.0
+author: Hermes Agent (auto-generated from Wiki)
+metadata:
+  hermes:
+    tags:
+{{tags_yaml}}
+    triggers:
+      keywords:
+{{keywords_yaml}}
+      urgency: "low"
+
+lifecycle:
+  owner_team: "TBD"
+  review_cadence: "{{review_cadence}}"
+  last_reviewed_on: "{{date}}"
+---
+
+# {{title}}
+
+> 📋 **Quality:** {{quality_label}}级 | **Type:** reference | **Generated:** {{date}}
+
+<!--
+@load_strategy: progressive
+@l1_tokens: ~300
+@l2_tokens: ~800/section
+-->
+
+## L1: 快速索引
+
+| 类别 | 条目 |
+|------|------|
+| **常用命令** | <command1>, <command2>, <command3> |
+| **配置参数** | <param1>, <param2> |
+| **工作流** | <workflow1>, <workflow2> |
+
+---
+
+## L2: <命令/参数详情>
+
+### `<名称>`
+
+```bash
+<command_template>
+```
+
+| 参数 | 类型 | 必填 | 默认值 | 说明 |
+|------|------|------|--------|------|
+| `<param1>` | `<type>` | 是 | - | <说明> |
+
+### 常见工作流
+
+```bash
+# <场景>: <描述>
+<command_1>
+<command_2>
+```
+
+---
+
+## ⚠️ 容易混淆的用法
+
+{{pitfalls}}
+
+---
+
+## ✅ 使用验证
+
+- [ ] <命令输出符合预期>
+- [ ] <副作用已确认>
